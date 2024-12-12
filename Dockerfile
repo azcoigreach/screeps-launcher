@@ -15,15 +15,13 @@ FROM buildpack-deps:buster
 
 ARG UID=1000
 ARG GID=1000
-RUN <<-EOT bash
-    if [[ "${GID}" != "0" ]] ; then
-        groupadd --gid ${GID} screeps
-    fi
-    if [[ "${UID}" != "0" ]] ; then
-        useradd --uid ${UID} --gid ${GID} --shell /bin/bash --create-home screeps
-    fi
+RUN if [[ "${GID}" != "0" ]] ; then \
+        groupadd --gid ${GID} screeps ; \
+    fi && \
+    if [[ "${UID}" != "0" ]] ; then \
+        useradd --uid ${UID} --gid ${GID} --shell /bin/bash --create-home screeps ; \
+    fi && \
     mkdir /screeps && chown ${UID}:${GID} /screeps
-EOT
 
 USER ${UID}:${GID}
 VOLUME /screeps
