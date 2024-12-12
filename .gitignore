@@ -3,3 +3,4 @@ config.yml
 !.circleci/config.yml
 test*
 dist
+/data
