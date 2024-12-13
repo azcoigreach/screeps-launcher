@@ -1,6 +1,7 @@
-# Ignore all files
-*
-# Except go files
-!go.mod
-!go.sum
-!**/*.go
+# # Ignore all files
+# *
+# # Except go files
+# !go.mod
+# !go.sum
+# !**/*.go
+/data
