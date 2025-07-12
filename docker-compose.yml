@@ -13,6 +13,7 @@ services:
       - screeps-data:/screeps
     ports:
       - "${SCREEPS_LAUNCHER_HOST:-0.0.0.0}:21025:21025/tcp"
+      - "${SCREEPS_LAUNCHER_HOST:-0.0.0.0}:21026:21026/tcp"
     environment:
       MONGO_HOST: mongo
       REDIS_HOST: redis
